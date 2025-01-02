@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fasilitas - FIRA HOTEL</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+        }
+        header {
+            background-color: rgb(182, 187, 190);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #666;
+            padding: 10px 0;
+        }
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .navbar a:hover {
+            background-color: #555;
+        }
+        #content {
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #222;
+            color: white;
+            max-width: 800px;
+        }
+        .fasilitas-card {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #444;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Fasilitas - FIRA HOTEL
+</header>
+
+<div class="navbar">
+    <a href="./tugas1.html">HOME</a>
+    <a href="./kamar.html">KAMAR</a>
+    <a href="./fasilitas.html">FITUR</a>
+    <a href="#">FASILITAS</a>
+    <a href="./pesan.html">PESAN SEKARANG</a>
+
+</div>
+
+<!-- <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <button id="tambah" class="btn btn-success m-3 w-100">Tambah Fasilitas</button>
+        </div>
+    </div>
+</div> -->
+<div id="content">
+    <!-- Fasilitas akan dirender secara dinamis -->
+</div>
+
+
+<footer>
+    &copy; 2024 FIRA HOTEL
+</footer>
+
+<script>
+    // Data fasilitas
+    let fasilitas = [
+        { id: 1, name: "Petualangan Alam", description: "Nikmati petualangan outdoor di sekitar hotel, termasuk hiking, camping, dan banyak lagi." },
+        { id: 2, name: "Kolam Renang", description: "Kolam air panas tersedia sepanjang tahun. Terdapat juga kolam anak-anak dan dewasa dengan pilihan reguler dan premium." },
+        { id: 3, name: "Pusat Kebugaran", description: "Dilengkapi peralatan modern untuk menjaga kebugaran Anda." },
+        { id: 4, name: "Ruang Rapat", description: "Cocok untuk kebutuhan bisnis Anda dengan fasilitas lengkap." },
+    ];
+
+    const content = document.getElementById("content");
+
+    // Fungsi render fasilitas
+    function renderfasilitas() {
+        content.innerHTML = ""; // Kosongkan konten sebelum render ulang
+        fasilitas.forEach(fasilitas => {
+            const fasilitasCard = document.createElement("div");
+            fasilitasCard.classList.add("fasilitas-card");
+            fasilitasCard.innerHTML = `
+                <h5>${fasilitas.name}</h5>
+                <p>${fasilitas.description}</p>
+            `;
+            content.appendChild(fasilitasCard);
+        });
+    }
+
+    // Fungsi menambah fasilitas
+    function addfasilitas() {
+        const name = prompt("Masukkan nama fasilitas:");
+        const description = prompt("Masukkan deskripsi fasilitas:");
+        if (name && description) {
+            const id = Date.now(); // ID unik
+            fasilitas.push({ id, name, description });
+            renderfasilitas();
+        }
+    }
+
+    // Fungsi mengedit fasilitas
+    function editfasilitas(id) {
+        const fasilitas = fasilitas.find(f => f.id === id);
+        if (fasilitas) {
+            const name = prompt("Ubah nama fasilitas:", fasilitas.name);
+            const description = prompt("Ubah deskripsi fasilitas:", fasilitas.description);
+            if (name && description) {
+                fasilitas.name = name;
+                fasilitas.description = description;
+                renderfasilitas();
+            }
+        } else {
+            alert("Fasilitas tidak ditemukan!");
+        }
+    }
+
+    // Fungsi menghapus fasilitas
+    function deletefasilitas(id) {
+        const index = fasilitas.findIndex(f => f.id === id);
+        if (index !== -1) {
+            if (confirm("Apakah Anda yakin ingin menghapus fasilitas ini?")) {
+                fasilitas.splice(index, 1);
+                renderfasilitas();
+            }
+        }
+    }
+
+    // Inisialisasi
+    // document.getElementById("tambah").addEventListener("click", addfasilitas);
+    renderfasilitas();
+</script>
+
+</body>
+</html>

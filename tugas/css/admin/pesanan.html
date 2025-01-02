@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIRA HOTEL</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+        }
+        header {
+            background-color: rgb(182, 187, 190);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav {
+            background-color: #444;
+            overflow: hidden;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        #container {
+            display: flex;
+            margin: 20px;
+        }
+        #leftbar {
+            width: 25%;
+            padding: 10px;
+            background-color: #222;
+        }
+        #leftbar h3 {
+            color: white;
+            font-size: 18px;
+        }
+        .video-wrapper {
+            margin-bottom: 10px;
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        #content {
+            width: 75%;
+            background: #000;
+            /* display: grid;
+            grid-template-columns: repeat(3, 1fr); */
+            gap: 10px;
+            padding: 10px;
+        }
+        #content img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            height: auto;
+            display: block;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #666;
+    font-family: Arial, sans-serif;
+    padding: 10px 0;
+}
+
+.navbar a, .dropdown .dropbtn {
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
+
+.dropdown .dropbtn {
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Nested dropdown styling */
+.dropdown .dropdown-content .dropdown {
+    position: relative;
+}
+
+.dropdown .dropdown-content .dropdown-content {
+    left: 100%; /* Position to the right of parent dropdown */
+    top: 0;
+}
+
+/* Hover effects */
+.navbar a:hover, .dropdown:hover .dropbtn, .dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* Arrow icon for nested dropdown */
+.dropdown .dropdown-content .dropdown > a:after {
+    content: '▶';
+    float: right;
+}
+
+.room-text {
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <img src="logoFira.png" alt="Hotel Logo" style="height: 40px; vertical-align: middle;">
+    Firaa HOTEL
+</header>
+
+<!-- Navbar -->
+<div class="navbar">
+    <a href="./tugas1.html">HOME</a>
+    <a href="./kamar.html">KAMAR</a>
+    <a href="./pesanan.html">PEMESANAN</a>
+    <a href="./fasilitas.html">FITUR</a>
+    <div class="dropdown">
+        <button class="dropbtn">FASILITAS</button>
+        <div class="dropdown-content">
+            <a href="#">PETUALANGAN ALAM</a>
+            <div class="dropdown">
+                <a href="#">KOLAM RENANG</a>
+                <div class="dropdown-content">
+                    <a href="#">SUMBER AIR PANAS</a>
+                    <div class="dropdown">
+                        <a href="#">KOLAM ANAK & DEWASA</a>
+                        <div class="dropdown-content">
+                            <a href="#">REGULER</a>
+                            <a href="#">PREMIUM</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#">PUSAT KEBUGARAN</a>
+            <a href="#">RUANG RAPAT</a>
+        </div>
+    </div>
+    <a href="../loginKamu.html">LOGOUT</a>
+</div>
+
+
+<!-- Container for Leftbar and Content -->
+<div id="container">
+    <!-- Leftbar (Video) -->
+    <div id="leftbar">
+        
+    </div>
+
+    <!-- Content (Room Images) -->
+    <div id="content">
+      <div class="orderList">
+        <table class="table table-light table-striped">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Jenis Kelamin</th>
+                <th scope="col">Durasi</th>
+                <th scope="col">Tipe</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Laki-laki</td>
+                <td>2 Hari</td>
+                <td>Standard</td>
+                <td>Rp 750.000,00</td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Laki-laki</td>
+                <td>2 Hari</td>
+                <td>Standard</td>
+                <td>Rp 750.000,00</td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Laki-laki</td>
+                <td>2 Hari</td>
+                <td>Standard</td>
+                <td>Rp 750.000,00</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+      
+</div>
+
+<!-- Footer -->
+<footer>
+    &copy; 2024 Best Hotel
+</footer>
+
+<script src="../js/script.js"></script>
+
+<script>
+    console.log(orders);
+    
+    document.addEventListener("DOMContentLoaded", displayOrders());
+</script>
+
+</body>
+</html>
